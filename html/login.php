@@ -36,7 +36,7 @@ $stmt->execute([$usuario,$senha]);
 $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if(count($resultados) === 0){
-    header("Location: index.php?login=false");
+    header("Location: ../index.php?login=false");
     die();
 }
 

@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <div id="mensagemBox" class="popUpDesabilitado">
+        <p id="mensagemTexto"></p>
+    </div>
     <div class="main-login">
         <div class="left-login">
             <h1>Gerenciamento de Alunos</h1>
@@ -22,7 +25,7 @@
         <br><br>
 
         <div class="right-login">
-            <form action="login.php" method="POST" class="card-login">
+            <form action="html/login.php" method="POST" class="card-login">
                 <h2>LOGIN</h2>
                 <div class="textfield">
                     <label for="usuario">Usuário</label>
@@ -35,8 +38,7 @@
                 </div>
 
                 <button class="btn-login" id="login-button">Login</button>
-                <a href="">Recuperar Senha</a>
-                <a href="" class="cadastro">Cadastro</a>
+                <a href="./html/cadastro.php" class="cadastro">Cadastro</a>
             </form>
     </div>
 
