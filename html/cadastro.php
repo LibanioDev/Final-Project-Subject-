@@ -10,14 +10,12 @@
 <body>
     <div class="main-login">
         <div class="left-login">
-            <h1>Gerenciamento de Alunos</h1>
-            <img src="../img/pupil.svg" class="image" alt="pupil animate">
-        </div>
-        <br><br>
-
-        <div class="right-login">
             <form action="cadastrar.php" method="POST" class="card-login">
-                <h2>CADASTRAR</h2>
+                <div class="container-imagem mobile-imagem">
+                    <!--<h1>Gerenciamento de Alunos</h1>-->
+                    <img src="../img/pupil.svg" class="image" alt="pupil animate">
+                </div>
+                <h2 class="titulo-card">CADASTRAR</h2>
 
                 <div class="textfield">
                     <label for="usuario">Nome</label>
@@ -35,19 +33,27 @@
                 </div>
 
                 <div class="textfield">
-                    <label>Selecione seu curso</a>
+                    <label style="text-align: left;">Selecione seu curso</a>
                     <select name="curso">
                         <option value="Analise e Desenv. de Sistemas">Analise e Desenv. de Sistemas</option>
                         <option value="Ciencias Contabeis">Ciencias Contabeis</option>
                         <option value="Direito">Direito</option>
                         <option value="Odontologia">Odontologia</option>
+                        <option value="Admin">Admin</option>
                     </select>
                 </div>
                
 
                 <button class="btn-login" id="login-button">Cadastrar</button>
-                <a href="../index.php">Fazer Login</a>
+                <a class="cadastro" href="../index.php">Fazer Login</a>
             </form>
+        </div>
+        <div class="right-login">
+            <div class="container-imagem">
+                <!--<h1>Gerenciamento de Alunos</h1>-->
+                <img src="../img/pupil.svg" class="image" alt="pupil animate">
+            </div>
+        </div>
     </div>
 
     <script src="./js/script.js"></script>

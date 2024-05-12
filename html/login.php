@@ -17,6 +17,8 @@ if(!isset($_POST['senha'])){
     die();
 }
 
+session_start();
+
 $usuario = $_POST['usuario'];
 $senha = sha1($_POST['senha']); //criptografando senha
 
@@ -40,6 +42,7 @@ if(count($resultados) === 0){
     die();
 }
 
+$_SESSION['logado'] = true;
 header("Location: home.php");
 die();
 
