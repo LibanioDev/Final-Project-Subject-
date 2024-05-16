@@ -39,7 +39,8 @@
                 </div>
                 <br>
                 <button class="btn-login" id="login-button">Login</button>
-                <a href="./html/cadastro.php" class="cadastro">Cadastro</a>
+                <a href="./html/cadastro.php" class="cadastro">Cadastro</a><br>
+                <a href="./html/recuperar-senha.php" class="cadastro">Esqueci a senha</a>
             </form>
         </div>
         <div class="right-login">
