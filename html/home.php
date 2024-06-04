@@ -26,6 +26,7 @@
                     <th>Curso</th>
                     <th>Criado em</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,7 @@
                   <td><?php echo $value['matricula'] ?></td>
                   <td><?php echo $value['curso'] ?></td>
                   <td><?php echo date('d/m/Y', strtotime($value['criado_em'])) ?></td>
+                  <td><a href="edita-usuario?id=<?php echo $value['id'] ?>" class="editar">Editar</a></td>
                   <td><a href="api/deletar.php?id=<?php echo $value['id'] ?>" class="apagar">X</a></td>
                 </tr>
               <?php

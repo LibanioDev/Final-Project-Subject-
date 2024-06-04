@@ -29,8 +29,19 @@ body {
   cursor: pointer;
 }
 
+.editar{
+  background-color: rgba(245, 152, 46, 0.774);
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
 .apagar:hover{
   background-color: red;
+}
+
+.editar:hover{
+  background-color: rgba(247, 132, 0, 0.774);
 }
 
 .btn-sair:hover{
@@ -87,6 +98,8 @@ tr:hover {
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
+  cursor: pointer;
+  border: 0;
 }
 .add-btn:hover {
   background-color: #64a8d6;
