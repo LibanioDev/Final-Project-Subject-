@@ -3,7 +3,7 @@
 <?php
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST'){
-    header("Location: index.php");
+    header("Location: ../login");
     die();
 }
 
@@ -11,7 +11,7 @@ $mensagem = "";
 
 if(!isset($_POST['usuario']) || !isset($_POST['senha']) || !isset($_POST['nome']) || !isset($_POST['curso'])){
     $mensagem = "Nem todos os parametros foram enviados";
-    header("Location: ../index.php?mensagem=".$mensagem);
+    header("Location: ../login?mensagem=".$mensagem);
     die();
 }
 
@@ -37,7 +37,7 @@ $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if(count($resultados) > 0){
     $mensagem = "Usuario já existente";
-    header("Location: ../index.php?mensagem=".$mensagem);
+    header("Location: ../login?mensagem=".$mensagem);
     die();
 }
 
@@ -53,7 +53,7 @@ $date = new DateTime();
 $stmt->execute([$usuario,$senha, $nome, $numero_aleatorio, $curso, $date->format('Y-m-d H:i:s')]);
 
 $mensagem = "Usuario cadastrado com sucesso!";
-header("Location: ../index.php?mensagem=".$mensagem);
+header("Location: ../login?mensagem=".$mensagem);
 die();
 
 ?>

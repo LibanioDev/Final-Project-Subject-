@@ -3,7 +3,7 @@
 <?php
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST'){
-    header("Location: index.php");
+    header("Location: ../login");
     die();
 }
 
@@ -11,7 +11,7 @@ $mensagem = "";
 
 if(!isset($_POST['usuario']) || !isset($_POST['senha'])){
     $mensagem = "Nem todos os parametros foram enviados";
-    header("Location: ./recuperar-senha.php?mensagem=".$mensagem);
+    header("Location: ../recuperar-senha?mensagem=".$mensagem);
     die();
 }
 
@@ -35,7 +35,7 @@ $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if(count($resultados) == 0){
     $mensagem = "Usuario ".$usuario." não existe";
-    header("Location: ./recuperar-senha.php?mensagem=".$mensagem);
+    header("Location: ../recuperar-senha?mensagem=".$mensagem);
     die();
 }
 
@@ -46,7 +46,7 @@ $date = new DateTime();
 $stmt->execute([$senha, $usuario]);
 
 $mensagem = "Senha editada com sucesso!";
-header("Location: ../index.php?mensagem=".$mensagem);
+header("Location: ../login?mensagem=".$mensagem);
 die();
 
 ?>

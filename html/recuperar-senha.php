@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Acadêmico: Gerenciamento de Alunos</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -14,10 +14,10 @@
     <div class="main-login">
         
         <div class="left-login">
-            <form action="recupera.php" method="POST" class="card-login">
+            <form action="api/recupera.php" method="POST" class="card-login">
                 <div class="container-imagem mobile-imagem">
                     <!--<h1>Gerenciamento de Alunos</h1>-->
-                    <img src="../img/pupil.svg" class="image" alt="pupil animate">
+                    <img src="./img/pupil.svg" class="image" alt="pupil animate">
                 </div>
                 <h2 class="titulo-card">RECUPERAR SENHA</h2>
                 <div class="textfield">
@@ -37,18 +37,18 @@
                 
                 <br>
                 <button disabled class="btn-login" id="login-button">Redefinir</button>
-                <a href="../index.php" class="cadastro">Voltar</a><br>
+                <a href="login" class="cadastro">Voltar</a><br>
             </form>
         </div>
         <div class="right-login">
             <div class="container-imagem">
                 <!--<h1>Gerenciamento de Alunos</h1>-->
-                <img src="../img/pupil.svg" class="image" alt="pupil animate">
+                <img src="./img/pupil.svg" class="image" alt="pupil animate">
             </div>
         </div>
     </div>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/validacao.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/validacao.js"></script>
 </body>
 </html>

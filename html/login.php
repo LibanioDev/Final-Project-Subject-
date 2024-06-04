@@ -1,49 +1,53 @@
-<!--Script de autenticação de usuário-->
-
 <?php
-
-if($_SERVER['REQUEST_METHOD'] !== 'POST'){
-    header("Location: index.php");
-    die();
-}
-
-if(!isset($_POST['usuario'])){
-    header("Location: index.php");
-    die();
-}
-
-if(!isset($_POST['senha'])){
-    header("Location: index.php");
-    die();
-}
-
-session_start();
-
-$usuario = $_POST['usuario'];
-$senha = sha1($_POST['senha']); //criptografando senha
-
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'isabelle';
-$port = 3306;
-
-$conn = new PDO("mysql:host=$hostname;port=$port;dbname=$database", $username, $password);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$sql = "SELECT * FROM cadastro_aluno WHERE usuario = ? AND senha = ?";
-
-$stmt = $conn->prepare($sql);
-$stmt->execute([$usuario,$senha]);
-$resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-if(count($resultados) === 0){
-    header("Location: ../index.php?login=false");
-    die();
-}
-
-$_SESSION['logado'] = true;
-header("Location: home.php");
-die();
-
+    session_destroy();
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Acadêmico: Gerenciamento de Alunos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="mensagemBox" class="popUpDesabilitado">
+        <p id="mensagemTexto"></p>
+    </div>
+    <div class="main-login">
+        
+        <div class="left-login">
+            <form action="api/fazer-login.php" method="POST" class="card-login">
+                <div class="container-imagem mobile-imagem">
+                    <!--<h1>Gerenciamento de Alunos</h1>-->
+                    <img src="img/pupil.svg" class="image" alt="pupil animate">
+                </div>
+                <h2 class="titulo-card">LOGIN</h2>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="usuario" id="usuario" onchange="validateFields()" placeholder="Usuário">
+                </div>
+
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="password" onchange="validateFields()" placeholder="Senha">
+                </div>
+                <br>
+                <button class="btn-login" id="login-button">Login</button>
+                <a href="cadastro" class="cadastro">Cadastro</a><br>
+                <a href="recuperar-senha" class="cadastro">Esqueci a senha</a>
+            </form>
+        </div>
+        <div class="right-login">
+            <div class="container-imagem">
+                <!--<h1>Gerenciamento de Alunos</h1>-->
+                <img src="img/pupil.svg" class="image" alt="pupil animate">
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/funcoes.js"></script>
+</body>
+</html>

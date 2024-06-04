@@ -1,6 +1,6 @@
 <?php
-  include('../html/valida-usuario-logado.php');
-  include('../html/pega-usuarios.php');
+  include('./api/valida-usuario-logado.php');
+  include('./api/pega-usuarios.php');
 ?>
 
 <!DOCTYPE html>
@@ -9,13 +9,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD de Alunos</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
-    <a href="../index.php" class="btn-sair">Sair</a>
+    <a href="login" class="btn-sair">Sair</a>
     <div class="container">
         <h1>CRUD de Alunos</h1>
-        <a href="../html/cadastro.php" class="add-btn">Adicionar Aluno</a>
+        <a href="cadastro" class="add-btn">Adicionar Aluno</a>
         <table>
             <thead>
                 <tr>
@@ -40,7 +40,7 @@
                   <td><?php echo $value['matricula'] ?></td>
                   <td><?php echo $value['curso'] ?></td>
                   <td><?php echo date('d/m/Y', strtotime($value['criado_em'])) ?></td>
-                  <td><a href="deletar.php?id=<?php echo $value['id'] ?>" class="apagar">X</a></td>
+                  <td><a href="api/deletar.php?id=<?php echo $value['id'] ?>" class="apagar">X</a></td>
                 </tr>
               <?php
                 }

@@ -3,7 +3,7 @@
 <?php
 
 if($_SERVER['REQUEST_METHOD'] !== 'GET'){
-    header("Location: index.php");
+    header("Location: ../login");
     die();
 }
 
@@ -34,7 +34,7 @@ $sql = "DELETE FROM cadastro_aluno WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$id]);
 
-header("Location: ./home.php");
+header("Location: ../home");
 die();
 
 ?>
