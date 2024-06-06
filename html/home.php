@@ -15,7 +15,7 @@
     <a href="login" class="btn-sair">Sair</a>
     <div class="container">
         <h1>CRUD de Alunos</h1>
-        <a href="cadastro" class="add-btn">Adicionar Aluno</a>
+        <a href="cadastra-usuario" class="add-btn">Adicionar Aluno</a>
         <table>
             <thead>
                 <tr>

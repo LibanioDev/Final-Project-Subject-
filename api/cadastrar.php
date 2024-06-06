@@ -3,6 +3,11 @@
 <?php
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST'){
+    if(isset($_GET['path'])){
+        header("Location: ../home");
+        die();
+    }
+
     header("Location: ../login");
     die();
 }
@@ -36,6 +41,11 @@ $stmt->execute([$usuario]);
 $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if(count($resultados) > 0){
+    if(isset($_GET['path'])){
+        header("Location: ../home");
+        die();
+    }
+    
     $mensagem = "Usuario já existente";
     header("Location: ../login?mensagem=".$mensagem);
     die();
@@ -51,6 +61,11 @@ $sql = "INSERT INTO cadastro_aluno (usuario, senha, nome, matricula, curso, cria
 $stmt = $conn->prepare($sql);
 $date = new DateTime();
 $stmt->execute([$usuario,$senha, $nome, $numero_aleatorio, $curso, $date->format('Y-m-d H:i:s')]);
+
+if(isset($_GET['path'])){
+    header("Location: ../home");
+    die();
+}
 
 $mensagem = "Usuario cadastrado com sucesso!";
 header("Location: ../login?mensagem=".$mensagem);

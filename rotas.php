@@ -7,6 +7,7 @@
         'recuperar-senha' => 'html/recuperar-senha.php',
         'home' => 'html/home.php',
         'edita-usuario' => 'html/edita-usuario.php',
+        'cadastra-usuario' => 'html/cadastra-usuario.php'
     ];
 
 ?>
