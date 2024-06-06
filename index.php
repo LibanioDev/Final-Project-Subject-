@@ -2,7 +2,7 @@
     require_once('./rotas.php');
     session_start();
     $request = $_SERVER['REQUEST_URI'];
-    $request = str_replace('/FinalProjectSubject/', '', $request);
+    $request = str_replace('/Final-Project-Subject-/', '', $request);
     $request = parse_url($request, PHP_URL_PATH);
    
 
